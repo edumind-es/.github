@@ -24,6 +24,9 @@ EDUmind® es una marca registrada en España (OEPM); los logos y la identidad de
 | [geobreath](https://github.com/edumind-es/geobreath) | [breath.edumind.es](https://breath.edumind.es) | Respiración consciente con guías geométricas |
 | [edumind-robotics](https://github.com/edumind-es/edumind-robotics) | [robotics.edumind.es](https://robotics.edumind.es) | Plataforma de robótica educativa |
 | [edumind-footer](https://github.com/edumind-es/edumind-footer) | — | Componente footer compartido (React, i18n es/en/gl) |
+| [inventario-edumind](https://github.com/edumind-es/inventario-edumind) | — | Inventario local-first de recursos digitales para centros |
+
+En preparación de release pública: **MiClase** ([miclase.edumind.es](https://miclase.edumind.es)), **MiApp** ([miapp.edumind.es](https://miapp.edumind.es)), **Quiz** ([quiz.edumind.es](https://quiz.edumind.es)) y **E-ink EDUmind**. Mientras tanto, su código fuente completo está disponible bajo petición (`legal@edumind.es`), conforme a AGPL-3.0 art. 13.
 
 Los repositorios son *releases* de código saneadas para revisión y auditoría: no incluyen secretos, configuración de despliegue ni datos de aula. Ver `OPEN_SOURCE_RELEASE.md` en cada repo.
 
