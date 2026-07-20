@@ -25,8 +25,11 @@ EDUmind® es una marca registrada en España (OEPM); los logos y la identidad de
 | [edumind-robotics](https://github.com/edumind-es/edumind-robotics) | [robotics.edumind.es](https://robotics.edumind.es) | Plataforma de robótica educativa |
 | [edumind-footer](https://github.com/edumind-es/edumind-footer) | — | Componente footer compartido (React, i18n es/en/gl) |
 | [inventario-edumind](https://github.com/edumind-es/inventario-edumind) | — | Inventario local-first de recursos digitales para centros |
+| [edumind-miclase](https://github.com/edumind-es/edumind-miclase) | [miclase.edumind.es](https://miclase.edumind.es) | Cuaderno docente local-first (los datos de aula viven en el navegador) |
+| [edumind-quiz](https://github.com/edumind-es/edumind-quiz) | [quiz.edumind.es](https://quiz.edumind.es) | Quiz educativo con dinámica de juego |
+| [eink-edumind](https://github.com/edumind-es/eink-edumind) | — | Sistema CSS para lectura e-ink e impresión |
 
-En preparación de release pública: **MiClase** ([miclase.edumind.es](https://miclase.edumind.es)), **MiApp** ([miapp.edumind.es](https://miapp.edumind.es)), **Quiz** ([quiz.edumind.es](https://quiz.edumind.es)) y **E-ink EDUmind**. Mientras tanto, su código fuente completo está disponible bajo petición (`legal@edumind.es`), conforme a AGPL-3.0 art. 13.
+En preparación de release pública: **MiApp** ([miapp.edumind.es](https://miapp.edumind.es)). Mientras tanto, su código fuente completo está disponible bajo petición (`legal@edumind.es`), conforme a AGPL-3.0 art. 13.
 
 Los repositorios son *releases* de código saneadas para revisión y auditoría: no incluyen secretos, configuración de despliegue ni datos de aula. Ver `OPEN_SOURCE_RELEASE.md` en cada repo.
 
