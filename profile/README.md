@@ -19,7 +19,7 @@ EDUmind® es una marca registrada en España (OEPM); los logos y la identidad de
 |---|---|---|
 | [pasos-v2](https://github.com/edumind-es/pasos-v2) | [pasos.edumind.es](https://pasos.edumind.es) | Planificación educativa y tableros multimodales |
 | [edumind-board](https://github.com/edumind-es/edumind-board) | [board.edumind.es](https://board.edumind.es) | Pizarra de aula local-first (PWA) |
-| [liga-edumind](https://github.com/edumind-es/liga-edumind) | [liga.edumind.es](https://liga.edumind.es) | Gestión de ligas deportivas escolares |
+| [liga-de-valores](https://github.com/edumind-es/liga-de-valores) | [liga.edumind.es](https://liga.edumind.es) | Gestión de ligas deportivas escolares |
 | [motion-stopmotion](https://github.com/edumind-es/motion-stopmotion) | [motion.edumind.es](https://motion.edumind.es) | Editor de stop-motion para el aula |
 | [geobreath](https://github.com/edumind-es/geobreath) | [breath.edumind.es](https://breath.edumind.es) | Respiración consciente con guías geométricas |
 | [edumind-robotics](https://github.com/edumind-es/edumind-robotics) | [robotics.edumind.es](https://robotics.edumind.es) | Plataforma de robótica educativa |
