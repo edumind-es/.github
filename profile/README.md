@@ -23,6 +23,7 @@ EDUmind® es una marca registrada en España (OEPM); los logos y la identidad de
 | [motion-stopmotion](https://github.com/edumind-es/motion-stopmotion) | [motion.edumind.es](https://motion.edumind.es) | Editor de stop-motion para el aula |
 | [geobreath](https://github.com/edumind-es/geobreath) | [breath.edumind.es](https://breath.edumind.es) | Respiración consciente con guías geométricas |
 | [edumind-robotics](https://github.com/edumind-es/edumind-robotics) | [robotics.edumind.es](https://robotics.edumind.es) | Plataforma de robótica educativa |
+| [juegos-de-viaje](https://github.com/edumind-es/juegos-de-viaje) | [games.edumind.es](https://games.edumind.es) | Minijuegos educativos offline para peques de 5 a 8 años |
 | [edumind-footer](https://github.com/edumind-es/edumind-footer) | — | Componente footer compartido (React, i18n es/en/gl) |
 | [inventario-edumind](https://github.com/edumind-es/inventario-edumind) | — | Inventario local-first de recursos digitales para centros |
 | [edumind-miclase](https://github.com/edumind-es/edumind-miclase) | [miclase.edumind.es](https://miclase.edumind.es) | Cuaderno docente local-first (los datos de aula viven en el navegador) |
@@ -36,3 +37,9 @@ Los repositorios son *releases* de código saneadas para revisión y auditoría:
 ## Marco pedagógico
 
 Las apps se apoyan en **Los Cinco Mundos** (físico, mental, emocional, social e interior), el framework pedagógico propio del proyecto. Más contexto en [edumind.es](https://edumind.es).
+
+## Cómo colaborar
+
+Cada repositorio tiene su guía de contribución, su código de conducta y sus plantillas de issue, todo en español. **Se puede colaborar sin programar**: contar cómo funciona una app en tu aula, reportar un fallo, revisar los textos o traducir al gallego, catalán, euskera o inglés.
+
+Si encuentras un fallo de seguridad, no abras un issue público: escribe a **contacto@edumind.es** con el asunto `[Seguridad]`. Ver el `SECURITY.md` de cada repositorio.
