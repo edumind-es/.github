@@ -2,7 +2,7 @@
 
 ## Reportar una vulnerabilidad
 
-Escribe a **legal@edumind.es** con el detalle (repo afectado, versión, pasos de reproducción).
+Escribe a **contacto@edumind.es** con el detalle (repo afectado, versión, pasos de reproducción).
 No abras un issue público hasta que la vulnerabilidad esté corregida.
 
 Compromiso: acuse de recibo en 72 h y corrección priorizada según impacto.

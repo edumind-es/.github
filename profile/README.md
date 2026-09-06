@@ -30,7 +30,7 @@ EDUmind® es una marca registrada en España (OEPM); los logos y la identidad de
 | [edumind-quiz](https://github.com/edumind-es/edumind-quiz) | [quiz.edumind.es](https://quiz.edumind.es) | Quiz educativo con dinámica de juego |
 | [eink-edumind](https://github.com/edumind-es/eink-edumind) | — | Sistema CSS para lectura e-ink e impresión |
 
-En preparación de release pública: **MiApp** ([miapp.edumind.es](https://miapp.edumind.es)). Mientras tanto, su código fuente completo está disponible bajo petición (`legal@edumind.es`), conforme a AGPL-3.0 art. 13.
+En preparación de release pública: **MiApp** ([miapp.edumind.es](https://miapp.edumind.es)). Mientras tanto, su código fuente completo está disponible bajo petición (`contacto@edumind.es`), conforme a AGPL-3.0 art. 13.
 
 Los repositorios son *releases* de código saneadas para revisión y auditoría: no incluyen secretos, configuración de despliegue ni datos de aula. Ver `OPEN_SOURCE_RELEASE.md` en cada repo.
 
