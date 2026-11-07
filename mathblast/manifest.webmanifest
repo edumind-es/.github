@@ -1,0 +1,14 @@
+{
+  "name": "MathBlast! 2.0 · EDUmind",
+  "short_name": "MathBlast",
+  "description": "Calcula · Razona · Explica. Juego de matemáticas para Primaria y 1.º ciclo de ESO con apoyos DUA.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fffef7",
+  "theme_color": "#e8354a",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

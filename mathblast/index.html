@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MathBlast! 2.0 · EDUmind</title>
+<meta name="description" content="MathBlast! 2.0: juego de cálculo mental y razonamiento matemático para Primaria y 1.º ciclo de ESO, con apoyos DUA y modo equipos.">
+<meta name="theme-color" content="#e8354a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="doodle" style="top:8%;left:3%;animation-duration:7s" aria-hidden="true">✏️</div>
+<div class="doodle" style="top:20%;right:4%;animation-duration:9s;animation-delay:2s" aria-hidden="true">🌟</div>
+<div class="doodle" style="top:55%;left:2%;animation-duration:11s;animation-delay:1s" aria-hidden="true">📐</div>
+<div class="doodle" style="top:70%;right:3%;animation-duration:8s;animation-delay:3s" aria-hidden="true">🎯</div>
+<div class="doodle" style="top:40%;left:5%;animation-duration:13s" aria-hidden="true">🔢</div>
+
+<!-- ================= HOME ================= -->
+<main id="screen-home" class="screen active">
+  <div class="top-bar" style="max-width:680px">
+    <div class="logo-tag">EDU<span>mind</span></div>
+    <button class="vm-btn" aria-pressed="false" onclick="toggleVM()">👁 Ver mejor</button>
+  </div>
+
+  <div class="home-hero">
+    <h1 class="big-title">
+      <span class="star-deco" aria-hidden="true">⭐</span>
+      <span class="math">Math</span><span class="blast">Blast</span>!<sup>2.0</sup>
+      <span class="star-deco" aria-hidden="true">🎉</span>
+    </h1>
+    <div class="subtitle">Calcula · Razona · Explica</div>
+  </div>
+
+  <div class="setup-panel">
+    <section class="setup-section">
+      <h3>🎮 Modo de juego</h3>
+      <div class="mode-btns">
+        <button class="mode-btn" data-mode="mc" onclick="selectMode('mc')"><span class="mode-icon">🔘</span>Opción múltiple<br><small>Elige la respuesta</small></button>
+        <button class="mode-btn" data-mode="free" onclick="selectMode('free')"><span class="mode-icon">⌨️</span>Respuesta libre<br><small>Escribe el número</small></button>
+      </div>
+    </section>
+
+    <section class="setup-section">
+      <h3>📶 Nivel</h3>
+      <div class="pill-row lvl-row">
+        <button class="pill lvl" data-l="1" onclick="selectLevel(1)">Nivel 1<small>1.º – 2.º EP</small></button>
+        <button class="pill lvl" data-l="2" onclick="selectLevel(2)">Nivel 2<small>3.º – 4.º EP</small></button>
+        <button class="pill lvl" data-l="3" onclick="selectLevel(3)">Nivel 3<small>5.º – 6.º EP</small></button>
+        <button class="pill lvl" data-l="4" onclick="selectLevel(4)">Nivel 4<small>1.º – 2.º ESO</small></button>
+      </div>
+      <div class="note">El nivel abre los formatos de cada ciclo. La dificultad la ajustas con las cifras, el tiempo y los apoyos.</div>
+    </section>
+
+    <section class="setup-section">
+      <h3>🔣 Formatos</h3>
+      <div class="fmt-group-title">Cálculo</div>
+      <div class="op-grid" id="gridBase"></div>
+      <div class="fmt-group-title"><span class="new">NUEVO</span> Siguiente nivel</div>
+      <div class="op-grid" id="gridPlus"></div>
+      <div class="note">Puedes mezclar todos los formatos que quieras.</div>
+    </section>
+
+    <section class="setup-section" id="secDigits">
+      <h3>🔢 Cifras · suma, resta, multiplicación y división</h3>
+      <div class="pill-row">
+        <button class="pill digit" data-d="1" onclick="toggleDigit(1)">1</button>
+        <button class="pill digit" data-d="2" onclick="toggleDigit(2)">2</button>
+        <button class="pill digit" data-d="3" onclick="toggleDigit(3)">3</button>
+        <button class="pill digit" data-d="4" onclick="toggleDigit(4)">4</button>
+        <button class="pill digit" data-d="5" onclick="toggleDigit(5)">5</button>
+      </div>
+      <div class="note">Puedes marcar varios niveles.</div>
+    </section>
+
+    <section class="setup-section" id="secDiv">
+      <h3>➗ Divisiones</h3>
+      <label class="check"><input type="checkbox" id="optRemainder"> Con resto (se responde cociente y resto)</label>
+    </section>
+
+    <section class="setup-section">
+      <h3>❓ Número de preguntas</h3>
+      <div class="pill-row" id="qcountRow">
+        <button class="pill" data-q="5" onclick="selectQ(5)">5</button>
+        <button class="pill" data-q="10" onclick="selectQ(10)">10</button>
+        <button class="pill" data-q="15" onclick="selectQ(15)">15</button>
+        <button class="pill" data-q="20" onclick="selectQ(20)">20</button>
+        <button class="pill" data-q="30" onclick="selectQ(30)">30</button>
+      </div>
+    </section>
+
+    <section class="setup-section">
+      <h3>👥 Modo equipos</h3>
+      <button class="toggle-wrap" id="teamsToggle" aria-pressed="false" onclick="toggleTeams()"><span class="toggle-switch" aria-hidden="true"></span><span id="teamsToggleLabel">Desactivado</span></button>
+      <div class="teams-config" id="teamsConfig">
+        <div class="note" style="margin:0 0 10px">¿Cuántos equipos?</div>
+        <div class="pill-row">
+          <button class="pill" data-n="2" onclick="selectNumTeams(2)">2</button>
+          <button class="pill" data-n="3" onclick="selectNumTeams(3)">3</button>
+          <button class="pill" data-n="4" onclick="selectNumTeams(4)">4</button>
+          <button class="pill" data-n="5" onclick="selectNumTeams(5)">5</button>
+        </div>
+        <div class="team-inputs" id="teamInputs"></div>
+      </div>
+    </section>
+
+    <section class="setup-section" style="background:rgba(40,168,110,.06)">
+      <h3 style="color:var(--green)">♿ Apoyos DUA</h3>
+      <div class="check-list">
+        <label class="check"><input type="checkbox" id="duaHints" checked> Pista de estrategia bajo cada pregunta</label>
+        <label class="check"><input type="checkbox" id="duaTools" checked> Caja de herramientas visuales (ayudas graduadas)</label>
+        <label class="check"><input type="checkbox" id="duaPad" checked> Borrador para calcular con el dedo o el lápiz</label>
+        <label class="check"><input type="checkbox" id="duaTimer"> Temporizador:
+          <select id="timerSecs" aria-label="Segundos por pregunta"><option value="30">30 s</option><option value="60" selected>60 s</option><option value="90">90 s</option><option value="120">120 s</option></select>
+          <span style="font-weight:600;opacity:.6;font-size:.82rem">(los problemas tienen el doble)</span></label>
+      </div>
+    </section>
+  </div>
+
+  <div class="start-wrap"><button class="start-btn" onclick="startGame()">🚀 ¡EMPEZAR!</button></div>
+</main>
+
+<!-- ================= GAME ================= -->
+<main id="screen-game" class="screen">
+  <div class="game-layout">
+    <div class="hud">
+      <div class="hud-item"><span class="hud-label">Preg.</span><span class="hud-val" id="hudQ">1/10</span></div>
+      <div class="hud-item" style="flex:1"><div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar" style="width:0%"></div></div></div>
+      <div class="hud-item hidden" id="hudTimerWrap"><span class="hud-label">Tiempo</span><span class="hud-val" id="hudTimer" style="color:var(--red)">30</span></div>
+      <div class="hud-item"><span class="hud-label">Bien</span><span class="hud-val" id="hudCorrect" style="color:var(--green)">0</span></div>
+      <div class="hud-item"><span class="hud-label">A repasar</span><span class="hud-val" id="hudWrong" style="color:var(--red)">0</span></div>
+      <div class="hud-item" id="hudScoreWrap"><span class="hud-label">Puntos</span><span class="hud-val" id="hudScore" style="color:var(--blue)">0</span></div>
+      <button class="vm-btn" aria-pressed="false" onclick="toggleVM()" title="Ver mejor">👁</button>
+      <button class="ctrl-btn danger" id="quitBtn" onclick="quitGame()" style="font-size:.8rem;padding:6px 12px">✕ Salir</button>
+    </div>
+
+    <div class="team-banner" id="teamBanner"></div>
+
+    <div class="question-card" id="questionCard" aria-live="polite">
+      <div class="op-badge" id="opBadge">+ Suma</div>
+      <div class="question-text" id="questionText"></div>
+      <div class="dua-hint" id="duaHint"></div>
+    </div>
+
+    <div class="aid-bar" id="aidBar">
+      <button class="aid-btn" id="toolsBtn" aria-expanded="false" aria-controls="toolsPanel" onclick="toggleTools()">🧰 Herramientas</button>
+      <button class="aid-btn" id="padBtn" aria-expanded="false" aria-controls="padPanel" onclick="togglePad()">✏️ Borrador</button>
+    </div>
+
+    <div class="panel hidden" id="toolsPanel"></div>
+
+    <div class="panel pad-wrap hidden" id="padPanel">
+      <canvas id="pad" aria-label="Borrador para calcular"></canvas>
+      <div class="pad-tools">
+        <button class="pad-color" style="background:#1a1a2e" aria-label="Lápiz negro" aria-pressed="true" data-c="#1a1a2e"></button>
+        <button class="pad-color" style="background:#2d6be4" aria-label="Lápiz azul" aria-pressed="false" data-c="#2d6be4"></button>
+        <button class="pad-color" style="background:#e8354a" aria-label="Lápiz rojo" aria-pressed="false" data-c="#e8354a"></button>
+        <button class="ctrl-btn" onclick="clearPad()">🧽 Borrar todo</button>
+      </div>
+    </div>
+
+    <div class="answer-area" id="answerArea"></div>
+    <div class="team-scores hidden" id="teamScores"></div>
+    <div class="game-controls"><button class="ctrl-btn" onclick="skipQuestion()">⏭ Saltar</button></div>
+  </div>
+</main>
+
+<!-- ================= RESULTS ================= -->
+<main id="screen-results" class="screen">
+  <div class="top-bar" style="max-width:680px">
+    <div class="logo-tag">EDU<span>mind</span></div>
+    <div class="sketch-tag" style="color:var(--purple)">Resultados</div>
+  </div>
+  <div class="results-card">
+    <h2 id="resultsTitle">🏆 ¡Terminado!</h2>
+    <div id="soloResults">
+      <div class="big-score" id="soloScore">0</div>
+      <div class="big-score-sub" id="soloScoreSub"></div>
+      <div class="stats-row">
+        <div class="stat-box"><div class="s-val" id="statCorrect" style="color:var(--green)">0</div><div class="s-lbl">Bien</div></div>
+        <div class="stat-box"><div class="s-val" id="statWrong" style="color:var(--red)">0</div><div class="s-lbl">A repasar</div></div>
+        <div class="stat-box"><div class="s-val" id="statPct">0%</div><div class="s-lbl">Precisión</div></div>
+        <div class="stat-box"><div class="s-val" id="statStreak" style="color:var(--amber)">0</div><div class="s-lbl">Racha máx.</div></div>
+      </div>
+    </div>
+    <div id="teamsResults" class="hidden"><div class="podium" id="podium"></div></div>
+
+    <div class="section-title">📊 Por formato</div>
+    <table class="by-fmt" id="byFmt"></table>
+
+    <details class="hist">
+      <summary>📋 Ver todas las preguntas</summary>
+      <div class="history-list" id="historyList"></div>
+    </details>
+
+    <div class="result-btns">
+      <button class="result-btn primary" onclick="startGame()">🔄 Repetir</button>
+      <button class="result-btn secondary" onclick="goHome()">🏠 Inicio</button>
+    </div>
+  </div>
+</main>
+
+<div class="feedback-overlay" id="feedbackOverlay" role="dialog" aria-modal="true" aria-live="assertive"></div>
+<div class="confetti-wrap" id="confettiWrap" aria-hidden="true"></div>
+
+<script src="js/app.js"></script>
+
+<footer id="edumind-licencia" style="position:relative;z-index:1;margin-top:2.5rem;padding:1.2rem 1rem;text-align:center;font-size:0.78rem;line-height:1.6;color:#777;font-family:system-ui,sans-serif;">© 2026 EDUmind® · Luis Vilela Acuña · Recurso educativo libre bajo <a href="https://www.gnu.org/licenses/agpl-3.0.html" style="color:inherit;text-decoration:underline;" target="_blank" rel="noopener">AGPL-3.0-or-later</a> / <a href="https://eupl.eu/1.2/es/" style="color:inherit;text-decoration:underline;" target="_blank" rel="noopener">EUPL-1.2</a> · <a href="https://edumind.es" style="color:inherit;text-decoration:underline;" target="_blank" rel="noopener">edumind.es</a></footer>
+</body>
+</html>
